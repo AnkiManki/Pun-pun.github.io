@@ -197,7 +197,7 @@ $(document).ready(function () {
             } else {
 
                 swal({
-                        title: "You loose! It was" + " " + randomElement + " " + "!",
+                        title: "You lose! It was" + " " + randomElement + " " + "!",
                         text: "Refresh the page to play again:",
                         type: "input",
                         showCancelButton: true,
