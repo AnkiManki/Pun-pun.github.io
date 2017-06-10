@@ -19,7 +19,7 @@ $(document).ready(function () {
 
     let randomIndex;
     let randomElement;
-    let charElement;
+    //let charElement;
 
     let wordsArr = [];
 
@@ -39,10 +39,10 @@ $(document).ready(function () {
     function randomLetters() {
         randomIndex = Math.floor(Math.random() * wordsArray.length);
         randomElement = wordsArray[randomIndex].toUpperCase();
-        charElement = randomElement.split('');
+        //charElement = randomElement.split('');
     }
 
-    console.log(randomElement);
+    //console.log(randomElement);
 
     //Getting random array of numbers from 0 to 4
     function shuffle(a) {
@@ -128,15 +128,18 @@ $(document).ready(function () {
 
     // Add css class to the words whenever they are added to the top field, result field.
     function addClass() {
-        if (wordsArr.length == 1) {
-            $('#char1').addClass('letters').hide().fadeIn('fast');
-        } else if (wordsArr.length == 2) {
-            $('#char2').addClass('letters').hide().fadeIn('fast');
-        } else if (wordsArr.length == 3) {
-            $('#char3').addClass('letters').hide().fadeIn('fast');
-        } else if (wordsArr.length == 4) {
-            $('#char4').addClass('letters').hide().fadeIn('fast');
-        }
+        let selector = "#char" + wordsArr.length;
+        $(selector).addClass('letters').hide().fadeIn('fast');
+
+        // if (wordsArr.length == 1) {
+        //     $('#char1').addClass('letters').hide().fadeIn('fast');
+        // } else if (wordsArr.length == 2) {
+        //     $('#char2').addClass('letters').hide().fadeIn('fast');
+        // } else if (wordsArr.length == 3) {
+        //     $('#char3').addClass('letters').hide().fadeIn('fast');
+        // } else if (wordsArr.length == 4) {
+        //     $('#char4').addClass('letters').hide().fadeIn('fast');
+        // }
     }
 
     function showClass() {
@@ -227,8 +230,6 @@ $(document).ready(function () {
         tick();
     }
 
-    //if (drophistory.length > 10) drophistory = drophistory.slice(0, 10); KE ni treba da ogranicime arraya
-
     //Keeping the score
     let hiscore = {};
     let name;
@@ -239,8 +240,6 @@ $(document).ready(function () {
 
         drophistory.push(hiscore);
         localStorage.setItem("scoreJson", JSON.stringify(drophistory));
-
-
     }
 
     let displayScore = document.getElementById('displayScore');
@@ -275,7 +274,6 @@ $(document).ready(function () {
         
     });
 
-
     countdown();
 
     //adds shaking animation when the words are inccorect
@@ -286,6 +284,5 @@ $(document).ready(function () {
     function removeShake() {
         $('.wordsCircle > p').removeClass('woble');
     }
-
 
 });
