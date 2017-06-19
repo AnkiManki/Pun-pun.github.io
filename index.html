@@ -1,1 +1,59 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+    <script src="sweet/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="sweet/dist/sweetalert.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>Four Letters Game</title>
+</head>
+
+<body>
+    <!--Score-->
+    <div id="mainContainer">
+        <div id="titleContainer">
+            <div id="timer">Timer</div>
+            <button id="btnScore">Top 5 players</button>
+            <h3>SCORE</h3>
+            <h1 id="score">0</h1>
+            <hr class="style1">
+        </div>
+        <!--4 words result field-->
+        <div id="resultWords">
+            <div class="wordsCircle">
+                <p id="char1" class="letter"></p>
+            </div>
+            <div class="wordsCircle">
+                <p id="char2" class="letter"></p>
+            </div>
+            <div class="wordsCircle">
+                <p id="char3" class="letter"></p>
+            </div>
+            <div class="wordsCircle">
+                <p id="char4" class="letter"></p>
+            </div>
+        </div>
+        <!--playing field-->
+        <div id="mainCircle">
+            <div class="circle fade" style="top:30px;left:105px">
+                <p id="circle1"></p>
+            </div>
+            <div class="circle fade" style="bottom:30px;left:105px">
+                <p id="circle2"></p>
+            </div>
+            <div class="circle fade" style="top:105px;left:30px">
+                <p id="circle3"></p>
+            </div>
+            <div class="circle fade" style="top:105px;right:30px">
+                <p id="circle4"></p>
+            </div>
+        </div>
+    </div>
+    <div id="displayScore"></div>
+    <script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>
